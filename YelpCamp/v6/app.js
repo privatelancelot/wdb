@@ -171,7 +171,7 @@ app.get("/login", (req, res) => {
 //handle login logic
 app.post("/login", passport.authenticate("local", {
 	successRedirect: "/campgrounds",
-	failureRedirecT: "/login"
+	failureRedirect: "/login"
 }), (req, res) => {
 
 });
