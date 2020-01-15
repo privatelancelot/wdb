@@ -86,7 +86,7 @@ router.delete("/:id", (req, res) => {
 			console.log(err)
 			res.redirect("/campgrounds");
 		} else {
-			removingCampground.remove();
+			removingCampground.deleteOne();
 			res.redirect("/campgrounds");
 		}
 	});
