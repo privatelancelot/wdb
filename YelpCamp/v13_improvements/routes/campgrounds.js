@@ -5,13 +5,12 @@ var middleware = require("../middleware");
 
 //INDEX - show all campgrounds
 router.get("/", (req, res) => {
-	
     // Get all campgrounds from DB
     Campground.find({}, (err, allCampgrounds) => {
        if(err){
            console.log(err);
        } else {
-          res.render("campgrounds/index",{campgrounds:allCampgrounds});
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
        }
     });
 });
