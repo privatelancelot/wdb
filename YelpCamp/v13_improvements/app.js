@@ -1,20 +1,22 @@
-var Campground  	= require("./models/campground"),
-	Comment     	= require("./models/comment"),
-	LocalStrategy 	= require("passport-local"),
-	User			= require("./models/user"),
-	bodyParser  	= require("body-parser"),
-	mongoose    	= require("mongoose"),
-	flash			= require("connect-flash"),
-	passport		= require("passport"),
-	express     	= require("express"),
-	seedDB      	= require("./seeds"),
-	methodOverride = require("method-override"),
+var Campground  		= require("./models/campground"),
+	Comment     		= require("./models/comment"),
+	methodOverride 		= require("method-override"),
+	LocalStrategy 		= require("passport-local"),
+	User				= require("./models/user"),
+	flash				= require("connect-flash"),
+	bodyParser  		= require("body-parser"),
+	mongoose    		= require("mongoose"),
+	passport			= require("passport"),
+	express     		= require("express"),
+	seedDB      		= require("./seeds"),
+	moment 				= require("moment"),
 	//requiring routes
 	campgroundRoutes 	= require("./routes/campgrounds"),
 	commentRoutes		= require("./routes/comments"),
 	indexRoutes			= require("./routes/index");
 
-var app         	= express();
+var app         		= express();
+app.locals.moment 		= moment;
 
 mongoose.connect("mongodb://localhost/yelp_camp_v4", {
 	useNewUrlParser: true,
